@@ -14,9 +14,9 @@ def hello_name(request, name):
 
 
 def hello_template(request, name):
-    return render(request, "witaj/hello.html", {"name": name})
+    return render(request, "Lab_1/hello.html", {"name": name})
 
 
 def current_time(request):
     now = datetime.now(ZoneInfo("Europe/Warsaw"))
-    return render(request, "witaj/time.html", {"now": now.strftime("%d.%m.%Y, godzina: %H:%M")})
+    return render(request, "Lab_1/time.html", {"now": now.strftime("%d.%m.%Y, godzina: %H:%M")})
