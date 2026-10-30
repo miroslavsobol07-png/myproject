@@ -3,4 +3,6 @@ from django.apps import AppConfig
 
 class Lab1Config(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Lab_1'
+    name = 'lab1'
+    # Stara etykieta zachowuje tabele, uprawnienia i historię migracji.
+    label = 'Lab_1'

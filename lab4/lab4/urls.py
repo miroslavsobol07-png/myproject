@@ -1,10 +1,9 @@
-from django.contrib import admin
-from django.urls import path, include
-from Lab_4 import views
+from django.urls import path
+from . import views
+
+app_name = 'Lab_4'
 
 urlpatterns = [
-    # Główna strona również otwiera laboratorium.
-    path('', views.index, name='home'),
-    path('admin/', admin.site.urls),
-    path('Lab_4/', include('Lab_4.urls')),
+    path('', views.index, name='index'),
+    path('api/ksiazki/', views.books_api, name='books_api'),
 ]

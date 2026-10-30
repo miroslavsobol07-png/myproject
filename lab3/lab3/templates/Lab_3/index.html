@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab_3 – TaskBoard</title>
+    <link rel="stylesheet" href="{% static 'Lab_3/style.css' %}">
+    <script src="{% static 'Lab_3/app.js' %}" defer></script>
+</head>
+<body>
+<main>
+    <header>
+        <h1>TaskBoard</h1>
+        <p>Lab_3 · Twoja lista zadań</p>
+    </header>
+    <section class="board" aria-label="Zarządzanie zadaniami">
+        <form id="task-form" data-api-url="{% url 'Lab_3:task-list' %}" novalidate>
+            {% csrf_token %}
+            <label for="task-title">Nowe zadanie</label>
+            <div class="form-row">
+                <input id="task-title" name="title" type="text" maxlength="200"
+                       placeholder="Co masz do zrobienia?" autocomplete="off"
+                       aria-describedby="message" required>
+                <button type="submit" id="add-button">Dodaj</button>
+            </div>
+        </form>
+        <p id="message" role="alert" hidden></p>
+        <div class="toolbar">
+            <div class="filters" role="group" aria-label="Filtruj zadania">
+                <button type="button" data-filter="all" aria-pressed="true">Wszystkie</button>
+                <button type="button" data-filter="active" aria-pressed="false">Aktywne</button>
+                <button type="button" data-filter="completed" aria-pressed="false">Ukończone</button>
+            </div>
+            <p class="summary" aria-live="polite">
+                Wszystkich: <strong id="total-count">0</strong>
+                <span>Ukończonych: <strong id="completed-count">0</strong></span>
+            </p>
+        </div>
+        <ul id="task-list" aria-label="Lista zadań" aria-busy="true"></ul>
+        <p id="empty-state">Ładowanie zadań…</p>
+        <noscript>Włącz JavaScript, aby korzystać z listy zadań.</noscript>
+    </section>
+</main>
+</body>
+</html>

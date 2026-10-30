@@ -1,0 +1,39 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f6f8; color: #243244; font: 16px/1.5 Arial, sans-serif; }
+main { width: min(780px, 100%); margin: 48px auto; padding: 0 20px; }
+header { margin-bottom: 24px; }
+h1 { margin: 0; color: #244d79; font-size: 32px; }
+header p { margin: 4px 0 0; color: #596577; }
+.board { background: white; border: 1px solid #dce2e9; border-radius: 10px; padding: 24px; }
+label { display: block; margin-bottom: 8px; font-weight: bold; }
+.form-row { display: flex; gap: 10px; }
+input { width: 100%; min-width: 0; border: 1px solid #a6b2c1; border-radius: 5px; padding: 11px; font: inherit; }
+button { border: 1px solid #bdc9d6; border-radius: 5px; background: #f5f7fa; color: #243244; padding: 10px 14px; font: inherit; cursor: pointer; }
+button:hover { background: #e6edf5; }
+button:disabled { opacity: .6; cursor: wait; }
+button:focus-visible, input:focus-visible { outline: 3px solid #6b9dd4; outline-offset: 2px; }
+#add-button { background: #285b91; border-color: #285b91; color: white; }
+#add-button:hover { background: #204b78; }
+.toolbar { margin-top: 24px; padding-top: 20px; border-top: 1px solid #e0e5eb; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters [aria-pressed="true"] { background: #e5eef9; border-color: #537ba8; color: #214d7e; }
+.summary { display: flex; flex-wrap: wrap; gap: 8px 20px; color: #596577; margin: 16px 0; }
+#task-list { list-style: none; padding: 0; margin: 0; }
+.task { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #e0e5eb; }
+.task-title { min-width: 0; overflow-wrap: anywhere; }
+.task-actions { display: flex; flex-shrink: 0; gap: 8px; }
+.task-actions button { font-size: 14px; }
+.completed .task-title { text-decoration: line-through; color: #64716d; }
+.completed { background: #f4f8f5; }
+.delete { color: #a52d35; border-color: #ddb9bc; }
+#message { background: #fff0f0; color: #9b252d; padding: 12px; border-radius: 5px; overflow-wrap: anywhere; }
+#empty-state { text-align: center; padding: 22px 0 8px; color: #596577; }
+[hidden] { display: none !important; }
+@media (max-width: 520px) {
+    main { margin: 24px auto; padding: 0 12px; }
+    .board { padding: 16px; }
+    .task { align-items: flex-start; flex-direction: column; gap: 10px; }
+    .task-actions { align-self: flex-end; }
+    .filters { gap: 6px; }
+    .filters button { padding: 10px; font-size: 14px; }
+}
