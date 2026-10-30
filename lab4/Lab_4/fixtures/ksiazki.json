@@ -1,0 +1,74 @@
+[
+{
+  "model": "Lab_4.book",
+  "pk": 1,
+  "fields": {
+    "title": "Hobbit",
+    "author": "J.R.R. Tolkien",
+    "description": "Wyprawa Bilba Bagginsa, która zaczyna się od niespodziewanej wizyty.",
+    "year": 1937,
+    "genre": "Fantasy",
+    "available": true
+  }
+},
+{
+  "model": "Lab_4.book",
+  "pk": 2,
+  "fields": {
+    "title": "Mały Książę",
+    "author": "Antoine de Saint-Exupéry",
+    "description": "Opowieść o przyjaźni, odpowiedzialności i odkrywaniu tego, co ważne.",
+    "year": 1943,
+    "genre": "Baśń",
+    "available": true
+  }
+},
+{
+  "model": "Lab_4.book",
+  "pk": 3,
+  "fields": {
+    "title": "Solaris",
+    "author": "Stanisław Lem",
+    "description": "Spotkanie naukowców z tajemniczym oceanem odległej planety.",
+    "year": 1961,
+    "genre": "Science fiction",
+    "available": false
+  }
+},
+{
+  "model": "Lab_4.book",
+  "pk": 4,
+  "fields": {
+    "title": "Duma i uprzedzenie",
+    "author": "Jane Austen",
+    "description": "Historia Elizabeth Bennet o uczuciach i pozorach w angielskim społeczeństwie.",
+    "year": 1813,
+    "genre": "Powieść",
+    "available": true
+  }
+},
+{
+  "model": "Lab_4.book",
+  "pk": 5,
+  "fields": {
+    "title": "Tajemniczy ogród",
+    "author": "Frances Hodgson Burnett",
+    "description": "Zaniedbany ogród staje się początkiem przyjaźni i przemiany.",
+    "year": 1911,
+    "genre": "Powieść",
+    "available": false
+  }
+},
+{
+  "model": "Lab_4.book",
+  "pk": 6,
+  "fields": {
+    "title": "W osiemdziesiąt dni dookoła świata",
+    "author": "Jules Verne",
+    "description": "Phileas Fogg podejmuje zakład i wyrusza w niezwykłą podróż.",
+    "year": 1873,
+    "genre": "Przygodowa",
+    "available": true
+  }
+}
+]

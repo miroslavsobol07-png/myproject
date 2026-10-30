@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab_4 — Między stronami — katalog książek</title>
+    <link rel="stylesheet" href="{% static 'Lab_4/style.css' %}">
+    <script src="{% static 'Lab_4/app.js' %}" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="{% url 'Lab_4:index' %}">ms<span>Między stronami</span></a>
+        <a href="/admin/">Panel administratora ↗</a>
+    </header>
+    <main>
+        <section class="intro">
+            <p class="eyebrow">Lab_4 · DOMOWA BIBLIOTECZKA</p>
+            <h1>Dobra książka.<br>Twój następny rozdział.</h1>
+            <p>Przeglądaj naszą małą kolekcję i znajdź coś dla siebie.<br>Sprawdź, które tytuły są dostępne do wypożyczenia.</p>
+        </section>
+        <section aria-labelledby="catalog-title">
+            <div class="toolbar">
+                <h2 id="catalog-title">Na naszej półce</h2>
+                <div class="controls">
+                    <label for="available">Dostępność
+                        <select id="available">
+                            <option value="">Wszystkie książki</option>
+                            <option value="true">Dostępne</option>
+                            <option value="false">Wypożyczone</option>
+                        </select>
+                    </label>
+                    <button id="load" type="button" data-url="{% url 'Lab_4:books_api' %}">Wczytaj dane</button>
+                </div>
+            </div>
+            <p id="status" role="status" aria-live="polite">Wybierz dostępność i kliknij „Wczytaj dane”, aby zobaczyć książki.</p>
+            <div id="books" class="books" aria-busy="false"></div>
+        </section>
+    </main>
+    <footer>Między stronami <span>Mała biblioteczka, wielkie historie.</span></footer>
+</body>
+</html>
+
