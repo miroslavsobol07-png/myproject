@@ -122,3 +122,8 @@ Następnie Web → Reload. WSGI używa `hub.settings`. Produkcyjny `DJANGO_SECRE
 jest zachowany poza Git, a `DJANGO_DEBUG=0`. `/static/` wskazuje na
 `/home/PI26MSobol/pi26msobol.pythonanywhere.com/Lab_4/staticfiles`.
 Nie kopiuj lokalnej bazy na serwer i nie usuwaj serwerowej bazy przy aktualizacji.
+
+Jeśli na serwerze nie ma konta administratora, wykonaj w tym samym katalogu
+`python manage.py createsuperuser` i ustaw własne dane logowania. Ta komenda
+nie usuwa książek ani zadań. Lokalny administrator nie jest automatycznie
+kopiowany na PythonAnywhere.
