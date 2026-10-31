@@ -102,14 +102,13 @@ Testy API zapisują dane tylko w osobnej bazie testowej, nie w bazie użytkownik
 
 Strona: https://pi26msobol.pythonanywhere.com/lab4/
 
-Katalog źródeł: `/home/PI26MSobol/pi26msobol.pythonanywhere.com/Lab_4`.
-Zewnętrzna nazwa katalogu pozostała, ale jego zawartość odpowiada korzeniowi
-tego repozytorium: `hub`, `lab1`, `lab2`, `lab3`, `lab4`, `manage.py`.
+Katalog źródeł: `/home/PI26MSobol/pi26msobol.pythonanywhere.com`.
+Bezpośrednio w tym katalogu znajdują się: `hub`, `lab1`, `lab2`, `lab3`, `lab4`, `manage.py`.
 
 Aktualizacja po wdrożeniu tej struktury:
 
 ```bash
-cd /home/PI26MSobol/pi26msobol.pythonanywhere.com/Lab_4
+cd /home/PI26MSobol/pi26msobol.pythonanywhere.com
 source /home/PI26MSobol/.virtualenvs/pi26msobol.pythonanywhere.com/bin/activate
 git pull --ff-only origin main
 python -m pip install -r requirements.txt
@@ -120,7 +119,7 @@ python manage.py collectstatic --noinput
 
 Następnie Web → Reload. WSGI używa `hub.settings`. Produkcyjny `DJANGO_SECRET_KEY`
 jest zachowany poza Git, a `DJANGO_DEBUG=0`. `/static/` wskazuje na
-`/home/PI26MSobol/pi26msobol.pythonanywhere.com/Lab_4/staticfiles`.
+`/home/PI26MSobol/pi26msobol.pythonanywhere.com/staticfiles`.
 Nie kopiuj lokalnej bazy na serwer i nie usuwaj serwerowej bazy przy aktualizacji.
 
 Jeśli na serwerze nie ma konta administratora, wykonaj w tym samym katalogu
