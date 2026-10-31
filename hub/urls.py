@@ -1,2 +1,3 @@
-# Hub udostępnia wszystkie cztery laboratoria.
-from lab4.project_urls import urlpatterns
+from .routes import laboratory_urls
+
+urlpatterns = laboratory_urls(4)

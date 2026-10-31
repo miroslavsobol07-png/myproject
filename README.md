@@ -8,15 +8,19 @@ myproject/
 ├── hub/                 # wspólne settings, urls, WSGI, ASGI i testy struktury
 ├── lab1/
 │   ├── manage.py
-│   └── lab1/            # widoki, urls, project_urls, settings, templates...
+│   ├── config/          # settings.py, urls.py, wsgi.py, asgi.py
+│   └── lab1/            # kod zadania: widoki, modele, templates...
 ├── lab2/
 │   ├── manage.py
+│   ├── config/          # settings.py, urls.py, wsgi.py, asgi.py
 │   └── lab2/            # własny kod, templates i static
 ├── lab3/
 │   ├── manage.py
+│   ├── config/          # settings.py, urls.py, wsgi.py, asgi.py
 │   └── lab3/            # TaskBoard, API, migracje, templates i static
 ├── lab4/
 │   ├── manage.py
+│   ├── config/          # settings.py, urls.py, wsgi.py, asgi.py
 │   └── lab4/            # książki, API, admin, migracje, templates i static
 ├── manage.py            # uruchamia cały hub
 ├── requirements.txt
@@ -33,9 +37,11 @@ myproject/
 | lab4 | lab1 + lab2 + lab3 + katalog książek, admin, fetch i filtrowanie |
 | hub (korzeń) | wszystkie cztery prace |
 
-Kod wcześniejszych prac jest współdzielony. Każde `settings.py` włącza tylko
-potrzebne aplikacje, a `project_urls.py` dołącza trasy poprzedniej pracy.
-`urls.py` zawiera własne adresy aplikacji. Pobierz całe repozytorium, nie sam
+Kod wcześniejszych prac jest współdzielony. Każde `config/settings.py` włącza tylko
+potrzebne aplikacje. `config/urls.py` korzysta z `hub/routes.py`, który dołącza
+trasy wcześniejszych prac. Wewnętrzne `labN/urls.py` zawiera adresy aplikacji
+(np. API), a nie ustawienia projektu. W katalogu kodu zadania nie ma
+`settings.py`, `wsgi.py`, `asgi.py` ani `project_urls.py`. Pobierz całe repozytorium, nie sam
 podkatalog — późniejsze prace celowo korzystają z wcześniejszych.
 
 Nazwy pakietów to `lab1`–`lab4`, ale `AppConfig.label` pozostaje `Lab_1`–`Lab_4`.
