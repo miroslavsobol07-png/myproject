@@ -1,5 +1,10 @@
 # Laboratoria Django — lab1, lab2, lab3, lab4
 
+**Laboratorium 5** rozwija istniejący katalog z laboratorium 4 w tym samym
+folderze `lab4/lab4`. Dodaje ocenę, datę dodania, migrację oraz filtry,
+sortowanie i limit w ORM. Instrukcja: [Laboratorium 5](lab4/README_LAB5.md).
+Laboratorium 5 korzysta z tych samych adresów `/lab4/` i `/Lab_4/` oraz istniejącej bazy książek.
+
 Repozytorium zawiera własne, istniejące prace. Organizacja katalogów nawiązuje do
 [przykładu hellodjango](https://github.com/SUBKREPER11/hellodjango); kod zadań nie został z niego skopiowany.
 
