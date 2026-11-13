@@ -5,6 +5,11 @@ Model `Book`, tabela `Lab_4_book`, wszystkie poprzednie pola i rekordy zostały 
 Kod nadal znajduje się w `lab4/lab4`, a ustawienia w `lab4/config`.
 Nie utworzono drugiej kolekcji ani kopii modelu. Adresy `/lab4/` i `/Lab_4/` działają nadal.
 
+Opublikowano 13 listopada 2026:
+https://pi26msobol.pythonanywhere.com/lab4/.
+Wyniki migracji, 37 testów serwerowych i sprawdzenia strony są w
+`materialy-lab5/WYNIKI.md`.
+
 ## Uruchomienie lokalne
 
 Na tym komputerze, w PowerShell:
