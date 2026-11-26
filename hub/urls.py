@@ -1,3 +1,3 @@
 from .routes import laboratory_urls
 
-urlpatterns = laboratory_urls(5)
+urlpatterns = laboratory_urls(6)

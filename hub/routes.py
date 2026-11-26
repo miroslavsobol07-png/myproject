@@ -43,4 +43,11 @@ def laboratory_urls(level):
             path('lab5/', include('lab5.urls', namespace='lab5')),
             path('Lab_5/', include('lab5.urls')),
         ] + routes
+    if level >= 6:
+        from lab6 import views as sixth
+        routes = [
+            path('', sixth.index, name='lab6_home'),
+            path('lab6/', include('lab6.urls', namespace='lab6')),
+            path('Lab_6/', include('lab6.urls')),
+        ] + routes
     return routes

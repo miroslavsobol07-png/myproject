@@ -18,10 +18,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # foldery aplikacji
-for number in range(1, 6):
+for number in range(1, 7):
     sys.path.insert(0, str(BASE_DIR / f'lab{number}'))
 
-LAB_LEVEL = 5
+LAB_LEVEL = 6
 
 
 # quick-start development settings - unsuitable for production
@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ]
 
 DJANGO_APPS = INSTALLED_APPS.copy()
-INSTALLED_APPS += [f'lab{i}.apps.Lab{i}Config' for i in range(1, 6)]
+INSTALLED_APPS += [f'lab{i}.apps.Lab{i}Config' for i in range(1, 7)]
 
 ROOT_URLCONF = 'hub.urls'
 
