@@ -29,7 +29,7 @@ class CatalogTests(TestCase):
         self.assertEqual(response['Content-Type'], 'application/json')
         items = response.json()['items']
         self.assertEqual(len(items), 6)
-        self.assertEqual(set(items[0]), {'id', 'title', 'author', 'description', 'year', 'genre', 'available', 'rating', 'added_on'})
+        self.assertEqual(set(items[0]), {'id', 'title', 'author', 'description', 'year', 'genre', 'available'})
         self.assertIs(type(items[0]['available']), bool)
         self.assertIs(type(items[0]['year']), int)
         self.assertIs(type(items[0]['title']), str)

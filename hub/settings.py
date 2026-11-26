@@ -18,10 +18,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Każda aplikacja ma własny katalog z manage.py, tak jak w przykładzie.
-for number in range(1, 5):
+for number in range(1, 6):
     sys.path.insert(0, str(BASE_DIR / f'lab{number}'))
 
-LAB_LEVEL = 4
+LAB_LEVEL = 5
 
 
 # Quick-start development settings - unsuitable for production
@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ]
 
 DJANGO_APPS = INSTALLED_APPS.copy()
-INSTALLED_APPS += [f'lab{i}.apps.Lab{i}Config' for i in range(1, 5)]
+INSTALLED_APPS += [f'lab{i}.apps.Lab{i}Config' for i in range(1, 6)]
 
 ROOT_URLCONF = 'hub.urls'
 

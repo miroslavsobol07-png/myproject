@@ -21,7 +21,7 @@ class LaboratoryStructureTests(TestCase):
             self.assertTemplateUsed(response, f'Lab_{settings.LAB_LEVEL}/index.html')
 
     def test_future_laboratories_are_not_enabled(self):
-        for number in range(settings.LAB_LEVEL + 1, 5):
+        for number in range(settings.LAB_LEVEL + 1, 6):
             self.assertNotIn(f'lab{number}.apps.Lab{number}Config', settings.INSTALLED_APPS)
             with self.assertRaises(Resolver404):
                 resolve(f'/lab{number}/')

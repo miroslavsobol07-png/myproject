@@ -1,0 +1,38 @@
+/* Zwykły układ katalogu, bez dodatkowych bibliotek. */
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff; color: #292929; font: 16px/1.5 Arial, sans-serif; }
+a { color: #345c7a; text-underline-offset: 3px; }
+.topbar, main { width: min(1120px, 92%); margin: auto; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid #ccc; }
+.brand { color: #292929; font-size: 20px; font-weight: bold; text-decoration: none; }
+.topbar > a:last-child { font-size: 15px; }
+.intro { padding: 24px 0; }
+h1 { margin: 0; font-size: 28px; line-height: 1.3; }
+.toolbar { padding: 18px; background: #f3f3f3; border: 1px solid #ddd; }
+.controls { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) auto; align-items: end; gap: 14px; margin: 0; }
+label { display: grid; gap: 6px; font-size: 15px; }
+select, button { min-height: 42px; border: 1px solid #aaa; border-radius: 3px; padding: 8px 10px; font: inherit; }
+select { width: 100%; min-width: 0; background: #fff; color: #292929; }
+button { background: #345c7a; border-color: #345c7a; color: #fff; cursor: pointer; }
+button:hover { background: #24445c; }
+button:disabled { opacity: .65; cursor: wait; }
+:focus-visible { outline: 2px solid #345c7a; outline-offset: 3px; }
+.results-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.results-bar a { font-size: 15px; flex-shrink: 0; }
+#status { min-height: 24px; margin: 20px 0; }
+#status.error { color: #a12620; }
+.books { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 36px; }
+.book { background: #f2f2f2; border: 1px solid #ccc; padding: 20px; }
+.book h3 { margin: 0 0 12px; font-size: 19px; line-height: 1.35; overflow-wrap: anywhere; }
+.book p { margin: 7px 0; }
+.book .meta, .book .availability { color: #505050; font-size: 15px; }
+@media (max-width: 900px) {
+    .controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .books { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+    .topbar { align-items: start; flex-direction: column; gap: 8px; }
+    h1 { font-size: 25px; }
+    .controls, .books { grid-template-columns: 1fr; }
+    .toolbar { padding: 14px; }
+}

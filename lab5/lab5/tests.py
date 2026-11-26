@@ -9,10 +9,25 @@ from django.test import TestCase
 from django.test.utils import CaptureQueriesContext
 from django.urls import reverse
 
-from .models import Book
+from lab4.models import Book
 
 
 class Lab5Tests(TestCase):
+    def test_lab4_and_lab5_use_same_books_with_different_fields(self):
+        basic = self.client.get('/lab4/api/ksiazki/').json()['items']
+        extended = self.client.get('/lab5/api/ksiazki/').json()['items']
+        self.assertEqual([b['id'] for b in basic], [b['id'] for b in extended])
+        self.assertNotIn('rating', basic[0])
+        self.assertIn('rating', extended[0])
+        self.assertIn('added_on', extended[0])
+
+    def test_pages_load_their_own_assets_and_api(self):
+        for number in [4, 5]:
+            response = self.client.get(f'/lab{number}/')
+            self.assertTemplateUsed(response, f'Lab_{number}/index.html')
+            self.assertContains(response, f'/static/Lab_{number}/app.js')
+            self.assertContains(response, f'/lab{number}/api/ksiazki/')
+
     @classmethod
     def setUpTestData(cls):
         cls.a = Book.objects.create(title='Alfa', author='Autor A', description='Opis A',
@@ -29,7 +44,7 @@ class Lab5Tests(TestCase):
         cls.admin = User.objects.create_superuser('lab5tester', '', 'Lab5-test-only-2026!')
 
     def items(self, **params):
-        response = self.client.get(reverse('Lab_4:books_api'), params)
+        response = self.client.get(reverse('Lab_5:books_api'), params)
         self.assertEqual(response.status_code, 200)
         return response.json()['items']
 
@@ -66,7 +81,7 @@ class Lab5Tests(TestCase):
                        {'min_rating': 'abc'}, {'sort': 'password'}, {'limit': '0'},
                        {'limit': '-2'}, {'limit': '101'}, {'limit': '2.5'}, {'limit': 'abc'}]:
             with self.subTest(params=params):
-                response = self.client.get(reverse('Lab_4:books_api'), params)
+                response = self.client.get(reverse('Lab_5:books_api'), params)
                 self.assertEqual(response.status_code, 400)
                 self.assertIn('error', response.json())
 
