@@ -19,7 +19,7 @@ class Command(BaseCommand):
         if options['create_if_empty'] and not Book.objects.exists():
             call_command('loaddata', 'ksiazki', verbosity=0)
 
-        # To dane demonstracyjne, a nie rzeczywiste oceny czy daty zakupu.
+        # przykładowe oceny i daty
         samples = [
             ('Hobbit', 'J.R.R. Tolkien', 5, date(2026, 10, 20)),
             ('Mały Książę', 'Antoine de Saint-Exupéry', 4, date(2026, 10, 22)),

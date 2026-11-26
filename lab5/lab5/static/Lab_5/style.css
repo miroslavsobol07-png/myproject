@@ -1,4 +1,4 @@
-/* Zwykły układ katalogu, bez dodatkowych bibliotek. */
+/* układ katalogu */
 * { box-sizing: border-box; }
 body { margin: 0; background: #fff; color: #292929; font: 16px/1.5 Arial, sans-serif; }
 a { color: #345c7a; text-underline-offset: 3px; }

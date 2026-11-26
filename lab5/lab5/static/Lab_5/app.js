@@ -8,7 +8,7 @@ const jsonLink = document.querySelector('#json-link');
 const books = document.querySelector('#books');
 const status = document.querySelector('#status');
 
-// textContent wyświetla tekst z bazy bez wykonywania kodu HTML.
+// wstawiamy tekst bez interpretowania HTML
 function addText(parent, tag, text, className = '') {
     const element = document.createElement(tag);
     element.textContent = text;
@@ -29,7 +29,7 @@ async function loadBooks() {
     status.textContent = 'Ładowanie książek…';
 
     try {
-        // Django filtruje i sortuje w bazie. JS tylko wyświetla wynik.
+        // pobieramy przefiltrowane książki
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Błąd HTTP: ' + response.status);
@@ -62,7 +62,7 @@ async function loadBooks() {
         status.className = 'error';
         status.textContent = 'Nie udało się pobrać książek. Sprawdź połączenie i spróbuj ponownie.';
     } finally {
-        // Przywracamy obsługę przycisku także po błędzie.
+        // włączamy przycisk ponownie
         for (const control of form.elements) control.disabled = false;
         books.setAttribute('aria-busy', 'false');
     }

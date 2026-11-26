@@ -3,14 +3,14 @@ from django.db import models
 
 
 class Book(models.Model):
-    # Pola z laboratorium 4 pozostają bez zmian.
+    # pola z lab 4
     title = models.CharField('tytuł', max_length=150)
     author = models.CharField('autor', max_length=100)
     description = models.TextField('opis')
     year = models.PositiveIntegerField('rok wydania')
     genre = models.CharField('gatunek', max_length=60)
     available = models.BooleanField('dostępna', default=True)
-    # Puste wartości pozwalają zachować książki dodane przed laboratorium 5.
+    # nowe pola mogą być puste
     rating = models.PositiveSmallIntegerField(
         'ocena', null=True, blank=True,
         validators=[MinValueValidator(1), MaxValueValidator(5)],

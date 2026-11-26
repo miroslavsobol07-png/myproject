@@ -4,7 +4,7 @@ import os
 import sys
 from pathlib import Path
 
-# Dostęp do wspólnego hub i wcześniejszych laboratoriów.
+# dostęp do wspólnych ustawień i aplikacji
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 

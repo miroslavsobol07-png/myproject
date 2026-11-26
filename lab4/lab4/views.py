@@ -10,7 +10,7 @@ def index(request):
 
 @require_GET
 def books_api(request):
-    # QuerySet odczytuje dane z SQLite, a filtr wykonuje się w bazie.
+    # pobieramy książki z bazy
     books = Book.objects.all()
     available = request.GET.get('available', '')
     if available == 'true':

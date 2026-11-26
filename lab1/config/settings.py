@@ -1,4 +1,4 @@
-# Wspólne ustawienia bez powielania konfiguracji Django.
+# wspólne ustawienia
 from hub.settings import *
 
 LAB_LEVEL = 1

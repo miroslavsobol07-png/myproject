@@ -5,7 +5,7 @@ from django.urls import Resolver404, resolve
 
 
 class LaboratoryStructureTests(TestCase):
-    # Te same testy sprawdzają osobno lab1, lab2, lab3, lab4 i hub.
+    # testy stron i plików statycznych
     def test_previous_pages_are_available(self):
         paths = ['/hello/', '/hello/Anna/', '/hello_template/Anna/', '/time/']
         paths += [f'/lab{i}/' for i in range(1, settings.LAB_LEVEL + 1)]

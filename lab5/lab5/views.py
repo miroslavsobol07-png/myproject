@@ -12,7 +12,7 @@ def index(request):
 
 @require_GET
 def books_api(request):
-    # QuerySet odczytuje dane z SQLite, a filtr wykonuje się w bazie.
+    # pobieramy książki z bazy
     books = Book.objects.all()
     available = request.GET.get('available', '')
     if available == 'true':
@@ -32,7 +32,7 @@ def books_api(request):
             return JsonResponse({'error': 'Minimalna ocena musi wynosić od 1 do 5.'}, status=400)
         books = books.filter(rating__gte=int(min_rating))
 
-    # Do order_by trafiają tylko dozwolone nazwy pól.
+    # dozwolone pola sortowania
     sort = request.GET.get('sort', 'title')
     sorting = {
         'title': 'title',
@@ -45,7 +45,7 @@ def books_api(request):
         return JsonResponse({'error': 'Nieprawidłowy sposób sortowania.'}, status=400)
     books = books.order_by(sorting[sort], 'id')
 
-    # Wycięcie QuerySet tworzy LIMIT w SQL, zanim pobierzemy dane.
+    # ograniczamy liczbę wyników
     limit = request.GET.get('limit', '')
     if limit:
         try:

@@ -3,7 +3,7 @@ const filter = document.querySelector('#available');
 const books = document.querySelector('#books');
 const status = document.querySelector('#status');
 
-// textContent wyświetla tekst z bazy bez wykonywania kodu HTML.
+// wstawiamy tekst bez interpretowania HTML
 function addText(parent, tag, text, className = '') {
     const element = document.createElement(tag);
     element.textContent = text;
@@ -20,7 +20,7 @@ button.addEventListener('click', async () => {
     status.textContent = 'Ładowanie książek…';
 
     try {
-        // Wartość filtra trafia do Django jako parametr adresu URL.
+        // przekazujemy filtr w adresie
         const params = new URLSearchParams({available: filter.value});
         const response = await fetch(`${button.dataset.url}?${params}`);
         if (!response.ok) {
@@ -50,7 +50,7 @@ button.addEventListener('click', async () => {
         status.className = 'error';
         status.textContent = 'Nie udało się pobrać książek. Sprawdź połączenie i spróbuj ponownie.';
     } finally {
-        // Przywracamy obsługę przycisku także po błędzie.
+        // włączamy przycisk ponownie
         button.disabled = false;
         filter.disabled = false;
         books.setAttribute('aria-busy', 'false');

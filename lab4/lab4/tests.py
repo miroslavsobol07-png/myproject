@@ -7,7 +7,7 @@ from .models import Book
 class CatalogTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        # Testy używają oddzielnej bazy, więc nie zmieniają kolekcji użytkownika.
+        # dane w bazie testowej
         for number in range(6):
             Book.objects.create(title=f'Książka {number}', author='Autor',
                                 description='Opis', year=2020, genre='Powieść',

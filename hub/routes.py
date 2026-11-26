@@ -3,7 +3,7 @@ from django.urls import include, path
 
 
 def laboratory_urls(level):
-    # Włączamy tylko bieżącą pracę i wcześniejsze, bez kopiowania ich kodu.
+    # trasy bieżącej i wcześniejszych prac
     from lab1 import views as first
     routes = [
         path('admin/', admin.site.urls),

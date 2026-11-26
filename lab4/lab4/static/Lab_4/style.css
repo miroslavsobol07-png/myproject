@@ -1,4 +1,4 @@
-/* Prosty układ bez bibliotek: siatka kart dopasowuje się do ekranu. */
+/* układ kart dopasowany do ekranu */
 :root { color-scheme: light; --ink: #233b35; --muted: #52645e; --green: #245b49; }
 * { box-sizing: border-box; }
 body { margin: 0; background: #f7f7f0; color: var(--ink); font: 16px/1.6 Arial, sans-serif; }
